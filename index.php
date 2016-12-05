@@ -1,3 +1,17 @@
+<?php
+
+if ($_GET["city"]) {
+    $forecastPage = file_get_contents("http://www.weather-forecast.com/locations/London/forecasts/latest");
+    
+    $pageArray = explode('3 Day Weather Forecast Summary:</b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">', $forecastPage);
+    
+    $secondPageArray = explode('</span></span></span>', $pageArray[1]);
+    
+    $weather = $secondPageArray[0];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +33,7 @@
     <div class="container">
         <h1>What's The Weather?</h1>
         
-        <form method="post">
+        <form>
             <!-- Weather Input   -->
             <fieldset class="form-group">
                 <label for="city">Enter the name of a city</label>
@@ -28,6 +42,12 @@
 
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>
         </form>
+        
+        <div id="weather"><?php
+            if ($weather) {
+                echo '<div class="alert alert-success" role="alert">'.$weather.'</div>';
+            }    
+        ?></div>
     
     </div>
     

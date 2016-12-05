@@ -21,3 +21,11 @@ body {
 input {
     margin: 20px 0;
 }
+
+#submit{
+    background-color: darkseagreen;
+    color: black;
+}
+#weather{
+    margin: 15px;
+}
