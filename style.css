@@ -1,5 +1,5 @@
-html { 
-  background: url(pictures/forest.jpg) no-repeat center center fixed; 
+html {
+  background: url(pictures/forest.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,8 +14,8 @@ body {
     text-align: center;
     margin-top: 350px;
     color:white;
-    width: 450px
-    
+    width: 426px
+
 }
 
 input {
